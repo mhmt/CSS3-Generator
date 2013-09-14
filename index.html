@@ -1,26 +1,36 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js ie6 oldie" lang="en">
+    <![endif]-->
+    <!--[if IE 7]>
+    <html class="no-js ie7 oldie" lang="en">
+        <![endif]-->
+        <!--[if IE 8]>
+        <html class="no-js ie8 oldie" lang="en">
+            <![endif]-->
+            <!--[if gt IE 8]>
+            <!-->
+            <html class="no-js" lang="en">
+                <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>CSS3 Generator ¦ Border-radius</title>
-	<meta name="description" content="CSS3 Generator is a Web App for testing and learn how to use some of the new features of CSS3.">
-        <meta name="keywords" content="css3, generator,webapp, web, app, features, border, radius, border-radius">
-	<meta name="author" content="Andres Pi">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+                <title>CSS3 Generator ¦ Border-radius</title>
+                <meta name="description" content="CSS3 Generator is a Web App for testing and learn how to use some of the new features of CSS3.">
+                <meta name="keywords" content="css3, generator,webapp, web, app, features, border, radius, border-radius">
+                <meta name="author" content="Andres Pi, Sten Hougaard (v/2)">
+                <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+                <meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<link rel="stylesheet" href="css/style.css">
+                <link rel="stylesheet" href="css/style.css">
 
-	<script src="js/libs/modernizr-2.0.6.min.js"></script>
-        <script type="text/javascript">
+                <script src="js/libs/modernizr-2.0.6.min.js"></script>
+                <script type="text/javascript">
 
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-29486309-1']);
+        // _gaq.push(['_setAccount', 'UA-29486309-1']); Andres Pi
+        _gaq.push(['_setAccount', 'UA-1986428-1']);
         _gaq.push(['_trackPageview']);
 
         (function() {
@@ -30,62 +40,156 @@
         })();
 
         </script>
+
+        <style>
+#cont-border-generator input[type="text"]:focus {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+}
+
+        </style>
 </head>
 <body>
+                <div id="container">
+                    <header id="page-header">
+                        <h1>
+                            CSS3 Generator: Border-radius,
+                            <br />
+                            v/2.0.1 by Sten Hougaard<br />
+                            <br />
+                            <small>Now with transitions</small>
+                        </h1>
+                    </header>
+                    <section id="main" role="main">
+                        <div class="settingsContainer">
+                                <table class="v2">
+                                    <tbody>
+                                        <tr>
+                                            <th colspan="2">Keyboard and mouse controls</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Change unit</th>
+                                            <td>[Space]</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Change corner values</th>
+                                            <td>Mouse Wheel, [
+                                <span title="up">&#x2191 or A</span>
+                                ] and [
+                                <span title="down">&#x2193 or Z</span>
+                                ]</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Toggle change both values</th>
+                                            <td>[Alt or W]</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Toggle all values</th>
+                                            <td>[Shift or Q]</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Try:
+                                <a href="#" onclick="setRandomRadius();">Set Random Radius</a>
+                                (
+                                <a href="#" onclick="setRandomRadius(true)">Reset</a>
+                                )</td>
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                        </div>
+                        <div id="status"></div>
+                        <article>
 
-<div id="container">
-	<header id="page-header">
-            <h1>CSS3 Generator: Border-radius</h1>
-	</header>
-	<section id="main" role="main">
-            
-            <article>
-                
-                <div id="cont-border-generator">
-                    <div id="style-sample">
-                        <textarea id="style-board" readonly="readonly">Edit the values in the corners to generate the desired style.</textarea>    
-                    </div><!-- #style-sample -->
-                    <input type="text" id="blt" class="txt" placeholder="0">
-                    <input type="text" id="brt" class="txt" placeholder="0">
-                    <input type="text" id="brb" class="txt" placeholder="0">
-                    <input type="text" id="blb" class="txt" placeholder="0">
-                    <input type="text" id="bltl" class="txt" placeholder="0">
-                    <input type="text" id="brtl" class="txt" placeholder="0">
-                    <input type="text" id="brbl" class="txt" placeholder="0">
-                    <input type="text" id="blbl" class="txt" placeholder="0">
-                </div>
-                
-                
-                <ul class="filter">
-                    <li><label> <input name="browsers" value="webkit" type="checkbox" checked> Webkit </label></li>
-                    <li><label> <input name="browsers" value="moz" type="checkbox" checked> Firefox </label></li>
-                    <li><label> <input name="browsers" value="o" type="checkbox" checked> Opera </label></li>
-                </ul>
-                <ul class="filter">
-                    <li><label> <input value="px" name="measure" type="radio" checked> px </label></li>
-                    <li><label> <input value="em" name="measure" type="radio" > em </label></li>
-                    <li><label> <input value="%" name="measure" type="radio" > % </label></li>
-                </ul>
-            </article>
-            
-	</section>
-	<footer id="page-footer">
-            2012 <a href="http://labs.dreamsiteweb.com/" target="_blank" >DreamSite Web labs</a>. Reference <a href="http://www.w3schools.com/cssref/css3_pr_border-radius.asp" target="_blank">w3schools</a> & <a href="http://muddledramblings.com/table-of-css3-border-radius-compliance/" target="_blank">Muddled Ramblings and Half-Baked Ideas</a>.
-	</footer>
-</div> <!--! end of #container -->
+                            <div id="cont-border-generator">
+                                <div id="style-sample">
+                                    <div id="style-board" readonly="readonly">
+                                        Edit the values in the corners to generate the desired style.
+                                    </div>
+                                </div>
+                                <!-- #style-sample -->
+                                <input type="text" id="blt" class="txt" placeholder="0">
+                                <input type="text" id="brt" class="txt" placeholder="0">
+                                <input type="text" id="brb" class="txt" placeholder="0">
+                                <input type="text" id="blb" class="txt" placeholder="0">
+                                <input type="text" id="bltl" class="txt" placeholder="0">
+                                <input type="text" id="brtl" class="txt" placeholder="0">
+                                <input type="text" id="brbl" class="txt" placeholder="0">
+                                <input type="text" id="blbl" class="txt" placeholder="0">
+                                <input type="checkbox" id="clt" class="concurrent">
+                                <input type="checkbox" id="crt" class="concurrent">
+                                <input type="checkbox" id="crb" class="concurrent">
+                                <input type="checkbox" id="clb" class="concurrent"></div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+                            <ul class="filter">
+                                <li>
+                                    <label>
+                                        <input name="browsers" value="webkit" type="checkbox" checked>Webkit</label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input name="browsers" value="moz" type="checkbox" checked>Firefox</label>
+                                </li>
+                            </ul>
+                            <ul class="filter">
+                                <li>
+                                    <label>
+                                        <input value="px" name="measure" type="radio" checked>px</label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input value="em" name="measure" type="radio" >em</label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input value="%" name="measure" type="radio" >%</label>
+                                </li>
+                            </ul>
+                        </article>
 
-<!-- scripts concatenated and minified via ant build script-->
-<script src="js/script.js"></script>
-<!-- end scripts-->
+                    </section>
+                    <footer id="page-footer">
+                        <a href="https://github.com/netsi1964/CSS3-Generator" title="Get v/2 on github">v/2 at Github</a>
+                    </a>
+                    by
+                    <a href="http://www.netsi.dk/wordpress" title="The blog of Sten Hougaard">Sten Hougaard</a>
+                    -
+                    <a href="http://twitter.com/netsi1964" title="Netsi1964 at twitter">@netsi1964</a>
+                    <br />
+                    <small>
+                        2012
+                        <a href="http://labs.dreamsiteweb.com/" target="_blank" >DreamSite Web labs</a>
+                        . Reference
+                        <a href="http://www.w3schools.com/cssref/css3_pr_border-radius.asp" target="_blank">w3schools</a>
+                        &
+                        <a href="http://muddledramblings.com/table-of-css3-border-radius-compliance/" target="_blank">Muddled Ramblings and Half-Baked Ideas</a>
+                        .
+                    </small>
 
+                </footer>
+            </div>
+            <!--! end of #container -->
 
-<!--[if lt IE 7 ]>
-	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-<![endif]-->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+            <!-- scripts concatenated and minified via ant build script-->
+            <script src="js/script.js"></script>
+            <!-- v/2 extra functionality -->
+            <script src="js/jquery.mousewheel.js"></script>
+            <script src="js/netsi1964.js"></script>
+            <!-- end scripts-->
+
+            <!--[if lt IE 7 ]>
+            <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+            <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+            <![endif]-->
 
 </body>
-</html>
+        </html>
