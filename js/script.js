@@ -23,14 +23,16 @@ function updateBoard(values){
         setupValues = values.join(measure + ' ') + measure;
     }
     var browsers = $("input[name='browsers']:checked");
-    var styleBoardText = 'border-radius:' + setupValues  + ';\n';
+    var styleBoardText = '';
     if(values){
         for(i=0;i<browsers.length;i++){
-            styleBoardText += '-' + $("input[name='browsers']:checked")[i].value + '-border-radius:' + setupValues + ';\n';
+            styleBoardText += 'BR-' + $("input[name='browsers']:checked")[i].value + '-border-radius:' + setupValues + ';\n';
         }
-        styleBoard.text(styleBoardText);
-        styleSample.attr('style',styleBoardText);
+        styleBoardText+='border-radius:' + setupValues  + ';\n';
+        styleBoard.html(styleBoardText.replace(/BR/g, '<br />'));
+        styleSample.attr('style',styleBoardText.replace(/BR/g, ''));
     }
+
 
 }
 
